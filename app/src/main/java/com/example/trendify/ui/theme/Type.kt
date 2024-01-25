@@ -11,18 +11,20 @@ import androidx.compose.ui.unit.sp
 val typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
+        fontWeight = FontWeight(700),
+        fontSize = 24.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 0.5.sp,
+        color = Color.White
     ),
 
     bodyMedium = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight(700),
-        fontSize = 25.sp,
+        fontSize = 16.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
+        color = Color(0x8022577A)
     ),
 
     displayLarge = TextStyle(
@@ -32,6 +34,7 @@ val typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
     ),
+
 
     /* Other default text styles to override
     titleLarge = TextStyle(

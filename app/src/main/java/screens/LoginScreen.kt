@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import components.ButtonComponent
@@ -32,7 +32,7 @@ fun LoginScreen(
     ) {
         Box {
             Column {
-                ShowText(modifier,"Welcome to")
+                ShowText(modifier,"Welcome to", Color.Black)
                 TrendifyComponent()
             }
         }
@@ -55,10 +55,7 @@ fun LoginScreen(
             modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
         ){
-            ShowText(
-                modifier,
-                "Terms and conditions apply"
-            )
+            ShowText( modifier, "Terms & conditions apply", Color(0xFF22577A))
         }
     }
 }
