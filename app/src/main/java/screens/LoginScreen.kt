@@ -36,6 +36,8 @@ fun LoginScreen(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.Start
     ) {
+
+        //<----The welcome composable implementation----
         Box {
             Column {
                 ShowText(modifier,"Welcome to", Color.Black, FontWeight(600), 18.sp)
@@ -43,6 +45,7 @@ fun LoginScreen(
             }
         }
 
+        //<----Email and password textField composable implementation----
         Box {
             Column {
                 StatefulTextFiledComponent(modifier, "Enter email")
@@ -51,6 +54,8 @@ fun LoginScreen(
             }
         }
 
+
+        //<----Forgot password, login button and signup text button composable implementation----
         Box {
             Column (
                 modifier = modifier,
@@ -62,6 +67,7 @@ fun LoginScreen(
             }
         }
 
+        //<----Terms and condition composable implementation----
         Row (
             modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
