@@ -19,8 +19,8 @@ val Typography = Typography(
 
     bodyMedium = TextStyle(
         fontFamily = FontFamily.SansSerif,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
+        fontWeight = FontWeight(700),
+        fontSize = 25.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
         color = Color(0xFF22577A)
