@@ -32,7 +32,6 @@ fun TextFiledComponent(
     TextField(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp)
             .border(
                 border = BorderStroke(2.dp, color = MaterialTheme.colorScheme.primary),
                 shape = MaterialTheme.shapes.extraLarge

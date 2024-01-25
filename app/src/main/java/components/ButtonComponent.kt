@@ -24,7 +24,7 @@ fun ButtonComponent(
         Text(
             text = btnActionText,
             style = MaterialTheme.typography.bodyLarge,
-            modifier = modifier.padding(vertical = 12.dp)
+            modifier = modifier.padding(vertical = 8.dp)
         )
     }
 }
