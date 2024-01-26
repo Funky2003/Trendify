@@ -28,7 +28,8 @@ import components.TrendifyComponent
 
 @Composable
 fun SignupScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onNavigateToLogin: () -> Unit
 ) {
     SignupBackground()
     Column(
@@ -66,8 +67,8 @@ fun SignupScreen(
                 modifier = modifier,
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                ButtonComponent(modifier, "Sign Up" ) {}
-                TextButtonComponent(actionText = "or Log In") {}
+                ButtonComponent(modifier, "Sign Up"){}
+                TextButtonComponent(actionText = "or Log In",  onClick = onNavigateToLogin)
             }
         }
 
@@ -84,5 +85,5 @@ fun SignupScreen(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun SignupScreenPreview() {
-    SignupScreen()
+    SignupScreen(onNavigateToLogin = {})
 }
