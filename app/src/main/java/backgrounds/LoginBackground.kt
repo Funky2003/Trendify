@@ -27,7 +27,10 @@ fun LoginBackground(
         Column {
             Box (
                 modifier = modifier
-                    .background(color = Color(0xFF57CC99), shape = RoundedCornerShape(bottomEndPercent = 15, bottomStartPercent = 15))
+                    .background(
+                        color = Color(0xFF57CC99),
+                        shape = RoundedCornerShape(bottomEndPercent = 15, bottomStartPercent = 15)
+                    )
                     .height(650.dp)
                     .fillMaxWidth(),
             )

@@ -37,6 +37,6 @@ fun TextButtonComponent(
 fun TextButtonComponentPreview() {
     Column {
         TextButtonComponent(actionText = "forgot password") {}
-        TextButtonComponent(actionText = "or signup") {}
+//        TextButtonComponent(actionText = "or signup") {}
     }
 }
