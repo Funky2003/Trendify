@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.trendify.R
+import com.example.trendify.R.color.trendify_dark
 
 @Composable
 fun ButtonComponent(
@@ -24,8 +26,11 @@ fun ButtonComponent(
     onClick: () -> Unit
 ) {
     Button(
-        modifier = modifier.fillMaxWidth().padding(horizontal = 32.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 32.dp),
         onClick = onClick,
+        colors = ButtonDefaults.buttonColors( containerColor = Color(trendify_dark))
     ) {
         Text(
             text = btnActionText,

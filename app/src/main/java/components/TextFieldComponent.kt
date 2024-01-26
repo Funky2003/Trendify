@@ -23,6 +23,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.trendify.R.color.trendify_dark
 
 @Composable
 fun TextFiledComponent(
@@ -36,17 +37,18 @@ fun TextFiledComponent(
         modifier = modifier
             .fillMaxWidth()
             .border(
-                border = BorderStroke(2.dp, color = MaterialTheme.colorScheme.primary),
+                border = BorderStroke(2.dp, color = Color(trendify_dark)),
                 shape = MaterialTheme.shapes.extraLarge
             ),
         singleLine = true,
         value = textValue,
         keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
-        textStyle = TextStyle(color = MaterialTheme.colorScheme.primary),
+        textStyle = TextStyle( color = Color(trendify_dark)),
         maxLines = 1,
         onValueChange = onChangeTextValue,
         shape = MaterialTheme.shapes.extraLarge,
         colors = TextFieldDefaults.colors(
+            cursorColor = Color(trendify_dark),
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
