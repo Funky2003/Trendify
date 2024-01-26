@@ -8,10 +8,10 @@
       <entry key="LoginScreenPreview">
         <State />
       </entry>
-      <entry key="SignupScreenPreview">
+      <entry key="LoginSignupScreenPreview">
         <State />
       </entry>
-      <entry key="TextBoxComponentPreview">
+      <entry key="SignupScreenPreview">
         <State />
       </entry>
       <entry key="TextButtonComponentPreview">
