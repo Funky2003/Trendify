@@ -1,9 +1,15 @@
 package backgrounds
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.Down
+import androidx.compose.animation.AnimatedContentTransitionScope.SlideDirection.Companion.Up
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.EaseIn
+import androidx.compose.animation.core.EaseOut
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -43,20 +49,25 @@ fun TrendifyCircularBackground(
 
 @Composable
 fun AnimateCircularBackground(
-    selectedScreen: Screen
+    screen: Screen
 ) {
     AnimatedContent(
-        targetState = selectedScreen,
+        targetState = screen,
         label = "",
-        ) {
-        targetState -> when(targetState){
-            Screen.LogIn -> TrendifyCircularBackground(
-                200, 280, 0xFF57CC99
+        transitionSpec = {
+            slideIntoContainer(
+                animationSpec = tween(3000, easing = EaseIn),
+                towards = Up
+            ).togetherWith(
+                slideOutOfContainer(
+                    animationSpec = tween(3000, easing = EaseOut),
+                    towards = Down
+                )
             )
-            Screen.SignUp -> TrendifyCircularBackground(
-                200, 870, color = 0xFF57CC99
-            )
+
         }
+    ) {
+        
     }
 }
 
