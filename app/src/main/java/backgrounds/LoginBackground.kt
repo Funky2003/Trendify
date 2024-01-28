@@ -19,8 +19,8 @@ fun LoginBackground(
             .fillMaxWidth(),
         color = Color(0xFF80ED99)
     ){
-        TrendifyCircularBackground(200, 280, 0xFF57CC99)
-//        AnimateCircularBackground()
+//        TrendifyCircularBackground(200, 280, 0xFF57CC99)
+        AnimateCircularBackground(Screen.LogIn)
     }
 }
 

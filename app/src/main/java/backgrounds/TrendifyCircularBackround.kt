@@ -1,6 +1,9 @@
 package backgrounds
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -16,9 +19,18 @@ fun TrendifyCircularBackground(
     x: Int,
     y: Int,
     color: Long,
+    dampingRatio: Float = Spring.DampingRatioMediumBouncy,
+    stiffness: Float = Spring.StiffnessLow
     ) {
     Canvas(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .animateContentSize(
+                animationSpec = spring(
+                    dampingRatio = dampingRatio,
+                    stiffness = stiffness
+                )
+            ),
         onDraw = {
              drawCircle(
                  Color(color),
@@ -31,7 +43,7 @@ fun TrendifyCircularBackground(
 
 @Composable
 fun AnimateCircularBackground(
-    selectedScreen: Screen = Screen.LogIn
+    selectedScreen: Screen
 ) {
     AnimatedContent(
         targetState = selectedScreen,

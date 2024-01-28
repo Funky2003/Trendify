@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import navigation.Screen
 
 @Composable
 fun SignupBackground(
@@ -18,8 +19,8 @@ fun SignupBackground(
             .fillMaxWidth(),
         color = Color( 0xFF80ED99)
     ){
-        TrendifyCircularBackground(x = 200, y = 870, color = 0xFF57CC99)
-//        AnimateCircularBackground()
+//        TrendifyCircularBackground(x = 200, y = 870, color = 0xFF57CC99)
+        AnimateCircularBackground(Screen.SignUp)
     }
 }
 
