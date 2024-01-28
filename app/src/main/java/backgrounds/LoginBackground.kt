@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import navigation.Screen
 
 @Composable
 fun LoginBackground(
@@ -19,6 +20,7 @@ fun LoginBackground(
         color = Color(0xFF80ED99)
     ){
         TrendifyCircularBackground(200, 280, 0xFF57CC99)
+//        AnimateCircularBackground()
     }
 }
 

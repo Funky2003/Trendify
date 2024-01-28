@@ -20,7 +20,6 @@ fun LoginSignupScreen() {
             onNavigateToLogin = { currentScreen = Screen.LogIn }
         )
     }
-
 }
 
 @Preview(showBackground = true, showSystemUi = true)
