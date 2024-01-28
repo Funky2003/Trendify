@@ -18,7 +18,7 @@ fun SignupBackground(
             .fillMaxWidth(),
         color = Color( 0xFF80ED99)
     ){
-        TrendifyCircularBackground(x = 200, y = 800, color = 0xFF57CC99)
+        TrendifyCircularBackground(x = 200, y = 870, color = 0xFF57CC99)
     }
 }
 

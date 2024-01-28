@@ -11,18 +11,16 @@ import screens.SignupScreen
 
 @Composable
 fun LoginSignupScreen() {
-    //<---set the login screen as the current screen---------
     var currentScreen by remember { mutableStateOf(Screen.LogIn) }
-
-    //<-----Use the 'when' statement to switch between the two screens----
-    when (currentScreen) {
-        Screen.LogIn -> LoginScreen ( onNavigateToSignup = {
-            currentScreen = Screen.SignUp
-        } )
-        Screen.SignUp -> SignupScreen ( onNavigateToLogin = {
-            currentScreen = Screen.LogIn
-        } )
+     when (currentScreen){
+        Screen.LogIn -> LoginScreen (
+            onNavigateToSignup = { currentScreen = Screen.SignUp }
+        )
+        Screen.SignUp -> SignupScreen (
+            onNavigateToLogin = { currentScreen = Screen.LogIn }
+        )
     }
+
 }
 
 @Preview(showBackground = true, showSystemUi = true)

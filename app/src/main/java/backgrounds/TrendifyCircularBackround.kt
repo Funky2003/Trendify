@@ -13,14 +13,14 @@ import androidx.compose.ui.unit.dp
 fun TrendifyCircularBackground(
     x: Int,
     y: Int,
-    color: Long
+    color: Long,
 ) {
     Canvas(
         modifier = Modifier.fillMaxSize(),
         onDraw = {
              drawCircle(
                  Color(color),
-                 radius = 350.dp.toPx(),
+                 radius = 400.dp.toPx(),
                  Offset(x.dp.toPx(), y.dp.toPx())
              )
         },
