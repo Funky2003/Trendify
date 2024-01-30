@@ -6,18 +6,22 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
-import screens.LoginScreen
-import screens.SignupScreen
+import screens.individuals.LoginScreen
+import screens.individuals.SignupScreen
 
 @Composable
-fun LoginSignupScreen() {
+fun LoginSignupScreen(
+    animateScreen: () -> Unit
+) {
     var currentScreen by remember { mutableStateOf(Screen.LogIn) }
      when (currentScreen){
         Screen.LogIn -> LoginScreen (
-            onNavigateToSignup = { currentScreen = Screen.SignUp }
+            onNavigateToSignup = { currentScreen = Screen.SignUp },
+            animateScreen = animateScreen
         )
         Screen.SignUp -> SignupScreen (
-            onNavigateToLogin = { currentScreen = Screen.LogIn }
+            onNavigateToLogin = { currentScreen = Screen.LogIn },
+            animateScreen = animateScreen
         )
     }
 }
@@ -25,7 +29,7 @@ fun LoginSignupScreen() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LoginSignupScreenPreview() {
-    LoginSignupScreen()
+    LoginSignupScreen( animateScreen = {} )
 }
 
 //<-----ENUM class to represent the login and signup screens------

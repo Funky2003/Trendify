@@ -1,4 +1,4 @@
-package screens
+package screens.individuals
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.Arrangement
@@ -19,7 +19,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import backgrounds.SignupBackground
 import components.ButtonComponent
 import components.ShowText
 import components.StatefulTextFiledComponent
@@ -27,11 +26,12 @@ import components.TextButtonComponent
 import components.TrendifyComponent
 
 @Composable
-fun SignupScreen(
+fun LoginScreen(
     modifier: Modifier = Modifier,
-    onNavigateToLogin: () -> Unit
+    onNavigateToSignup: () -> Unit,
+    animateScreen: () -> Unit
 ) {
-    SignupBackground()
+//    LoginBackground()
     Column(
         modifier = modifier
             .fillMaxHeight()
@@ -52,11 +52,9 @@ fun SignupScreen(
         //<----Email and password textField composable implementation----
         Box {
             Column {
-                StatefulTextFiledComponent(modifier, "Enter name")
-                Spacer(modifier = modifier.padding(vertical = 8.dp))
                 StatefulTextFiledComponent(modifier, "Enter email", KeyboardType.Email)
                 Spacer(modifier = modifier.padding(vertical = 8.dp))
-                StatefulTextFiledComponent(modifier, "Create password", KeyboardType.Password)
+                StatefulTextFiledComponent(modifier, "Enter password", KeyboardType.Password)
             }
         }
 
@@ -67,8 +65,12 @@ fun SignupScreen(
                 modifier = modifier,
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
-                ButtonComponent(modifier, "Sign Up"){}
-                TextButtonComponent(actionText = "or Log In",  onClick = onNavigateToLogin)
+                TextButtonComponent(actionText = "Forgot password", onClick = {}, animate = {})
+                ButtonComponent(modifier, "Log In") {}
+                TextButtonComponent(actionText = "or signup", onClick = {
+                    onNavigateToSignup()
+                    animateScreen()
+                }){}
             }
         }
 
@@ -84,6 +86,6 @@ fun SignupScreen(
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun SignupScreenPreview() {
-    SignupScreen(onNavigateToLogin = {})
+fun LoginScreenPreview() {
+    LoginScreen(onNavigateToSignup = {}) {}
 }

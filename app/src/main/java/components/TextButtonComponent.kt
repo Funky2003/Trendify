@@ -1,5 +1,6 @@
 package components
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -15,20 +16,26 @@ import androidx.compose.ui.unit.sp
 fun TextButtonComponent(
     modifier: Modifier = Modifier,
     actionText: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    animate: () -> Unit
 ) {
-    TextButton(
-        modifier = modifier,
-        onClick = onClick
-    ) {
-        Text(
-            text = actionText,
-            style = TextStyle(
-                fontSize = 16.sp,
-                fontWeight = FontWeight(600),
-                color = Color.Black
+    Box {
+        TextButton(
+            modifier = modifier,
+            onClick = {
+                onClick()
+                animate()
+            }
+        ) {
+            Text(
+                text = actionText,
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight(600),
+                    color = Color.Black
+                )
             )
-        )
+        }
     }
 }
 
@@ -36,7 +43,7 @@ fun TextButtonComponent(
 @Composable
 fun TextButtonComponentPreview() {
     Column {
-        TextButtonComponent(actionText = "forgot password") {}
+        TextButtonComponent(actionText = "forgot password", onClick = {}, animate = {})
 //        TextButtonComponent(actionText = "or signup") {}
     }
 }
