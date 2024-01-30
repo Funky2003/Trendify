@@ -43,7 +43,7 @@ fun TextButtonComponent(
 @Composable
 fun TextButtonComponentPreview() {
     Column {
-        TextButtonComponent(actionText = "forgot password", onClick = {}, animate = {})
-//        TextButtonComponent(actionText = "or signup") {}
+       // TextButtonComponent(actionText = "forgot password", onClick = {}, animate = {})
+        TextButtonComponent(actionText = "or signup", animate =  {}, onClick = {})
     }
 }

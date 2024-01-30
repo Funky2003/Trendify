@@ -16,6 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import navigation.LoginSignupScreen
@@ -23,16 +25,20 @@ import navigation.LoginSignupScreen
 
 @Composable
 fun CircleCanvas(
+    modifier: Modifier = Modifier,
     y: Int
 ) {
+    //<-----Calculate the current screen width and use it to define the circle radius-----
+    val screenWidth = LocalConfiguration.current.screenWidthDp.dp
+    val radius = with(LocalDensity.current){ screenWidth * 90/100 }
 
     Canvas(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
         drawCircle(
             color = Color(0xFF57CC99),
-            radius = 400.dp.toPx(),
-            center = Offset(200.dp.toPx(), y.dp.toPx())
+            radius = radius.toPx(),
+            center = Offset(205.dp.toPx(), y.dp.toPx())
         )
     }
 }
@@ -58,9 +64,9 @@ fun AnimateTheCircle(
         }
     ) {
         targetState -> if (targetState){
-            CircleCanvas(250)
+            CircleCanvas(y = 280)
         } else{
-            CircleCanvas(870)
+            CircleCanvas(y = 850)
         }
     }
     LoginSignupScreen( animateScreen = { isAnimate.value = !isAnimate.value })
