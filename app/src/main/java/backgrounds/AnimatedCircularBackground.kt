@@ -23,16 +23,16 @@ import navigation.LoginSignupScreen
 
 @Composable
 fun CircleCanvas(
-    x: Int,
     y: Int
 ) {
+
     Canvas(
         modifier = Modifier.fillMaxSize()
     ) {
         drawCircle(
             color = Color(0xFF57CC99),
             radius = 400.dp.toPx(),
-            center = Offset(x.dp.toPx(), y.dp.toPx())
+            center = Offset(200.dp.toPx(), y.dp.toPx())
         )
     }
 }
@@ -58,9 +58,9 @@ fun AnimateTheCircle(
         }
     ) {
         targetState -> if (targetState){
-            CircleCanvas(200, 250)
+            CircleCanvas(250)
         } else{
-            CircleCanvas(200, 870)
+            CircleCanvas(870)
         }
     }
     LoginSignupScreen( animateScreen = { isAnimate.value = !isAnimate.value })
